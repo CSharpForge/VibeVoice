@@ -264,8 +264,15 @@ export function RoomShell({
     return "Join private room";
   }, [connected, connectionState]);
 
+  // Remote audio is attached from RoomEvent.TrackSubscribed, which LiveKit fires for
+  // already-published tracks while room.connect() is still pending (before we are
+  // "connected"). This container must therefore exist in every view, at the same
+  // position in the tree so React keeps the same DOM node across the join transition.
+  const audioSink = <div aria-hidden="true" ref={audioSinkRef} />;
+
   if (!connected) {
     return (
+      <>
       <main className="app-shell">
         <header className="topbar">
           <Link className="brand" href="/">
@@ -325,10 +332,13 @@ export function RoomShell({
           </form>
         </section>
       </main>
+      {audioSink}
+      </>
     );
   }
 
   return (
+    <>
     <main className="app-shell">
       <header className="topbar">
         <Link className="brand" href="/">
@@ -442,9 +452,9 @@ export function RoomShell({
           </form>
         </aside>
       </section>
-
-      <div ref={audioSinkRef} />
     </main>
+    {audioSink}
+    </>
   );
 }
 

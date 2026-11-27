@@ -9,3 +9,7 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 dev-server*.log
+
+# Deployment: real LiveKit config holds the server public IP; copy deploy/livekit.yaml.example
+/deploy/livekit.yaml
+/deploy/.env

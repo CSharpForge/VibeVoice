@@ -1,0 +1,28 @@
+# LiveKit OSS config (see https://github.com/livekit/livekit/blob/master/config-sample.yaml)
+# API keys come from the LIVEKIT_KEYS environment variable, not this file.
+
+port: 7880          # signalling; Nginx Proxy Manager terminates TLS and forwards here
+log_level: info
+
+rtc:
+  tcp_port: 7881    # ICE/TCP fallback, must be reachable directly (not via the proxy)
+  udp_port: 7882    # single UDP mux port, must be reachable directly
+  # Fixed addresses: no STUN-based discovery of our own IP.
+  use_external_ip: false
+  node_ip: 203.0.113.10          # <-- your server's PUBLIC IP (placeholder)
+  advertise_internal_ip: true    # also offer the LAN address so LAN clients skip NAT hairpin
+  # Phase 1 of self-hosted STUN: point clients at our own host instead of the
+  # built-in Twilio/Google defaults. Nothing listens on 3478 until phase 2
+  # (embedded TURN, needs the lk.example.com certificate), so no STUN candidates
+  # are produced for now; the server's fixed public IP still works.
+  stun_servers:
+    - lk.example.com:3478
+
+# Phase 2 (after NPM has issued the lk.example.com certificate):
+# turn:
+#   enabled: true
+#   domain: lk.example.com
+#   cert_file: /certs/fullchain.pem
+#   key_file: /certs/privkey.pem
+#   udp_port: 3478
+#   tls_port: 5349
