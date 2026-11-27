@@ -151,6 +151,7 @@ export function HomeShell() {
                     <div className="copy-line">
                       <div className="mono">{room.joinUrl}</div>
                       <button
+                        aria-label="Copy room link"
                         className="button secondary"
                         onClick={() => copy(room.joinUrl, "Room link")}
                         type="button"
@@ -165,6 +166,7 @@ export function HomeShell() {
                     <div className="copy-line">
                       <div className="mono">{room.roomKey}</div>
                       <button
+                        aria-label="Copy room key"
                         className="button secondary"
                         onClick={() => copy(room.roomKey, "Room key")}
                         type="button"

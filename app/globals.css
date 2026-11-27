@@ -218,7 +218,7 @@ h1 {
 
 .tab {
   display: inline-flex;
-  min-height: 42px;
+  min-height: 44px;
   align-items: center;
   justify-content: center;
   gap: 8px;
