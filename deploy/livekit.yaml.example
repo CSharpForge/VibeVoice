@@ -21,11 +21,20 @@ rtc:
   stun_servers:
     - lk.example.com:3478
 
-# Phase 2 (after NPM has issued the lk.example.com certificate):
+# Phase 2: LiveKit's embedded TURN (also answers STUN on udp_port). Fully self-hosted.
+# To enable, in this order:
+#   1. On the server, in /opt/vibevoice/.env set NPM_LETSENCRYPT_DIR to NPM's letsencrypt
+#      folder (the one NPM mounts at /etc/letsencrypt) and NPM_CERT_ID to the
+#      lk.agiledeck.org folder under live/ (e.g. npm-8). Only that cert is mounted.
+#   2. Open and forward 3478/udp and 5349/tcp to this server.
+#   3. Uncomment the block below, set npm-N to NPM_CERT_ID, then run deploy/deploy.sh.
+# LiveKit reads the certificate only at startup: after NPM renews it (about every
+# 60 days) run `docker compose restart livekit` on the server.
+#
 # turn:
 #   enabled: true
-#   domain: lk.example.com
-#   cert_file: /certs/fullchain.pem
-#   key_file: /certs/privkey.pem
+#   domain: lk.agiledeck.org
+#   cert_file: /certs/live/npm-N/fullchain.pem
+#   key_file: /certs/live/npm-N/privkey.pem
 #   udp_port: 3478
 #   tls_port: 5349

@@ -47,6 +47,11 @@ services:
       LIVEKIT_KEYS: "${LK_API_KEY}: ${LK_API_SECRET}"
     volumes:
       - ./livekit.yaml:/etc/livekit.yaml:ro
+      # Only this one NPM certificate (live/ holds symlinks into archive/, so both are
+      # mounted at the same relative layout). Other domains' keys are NOT exposed.
+      # Unset = empty placeholder folders, so nothing changes until TURN is enabled.
+      - ${NPM_LETSENCRYPT_DIR:-./no-certs}/live/${NPM_CERT_ID:-none}:/certs/live/${NPM_CERT_ID:-none}:ro
+      - ${NPM_LETSENCRYPT_DIR:-./no-certs}/archive/${NPM_CERT_ID:-none}:/certs/archive/${NPM_CERT_ID:-none}:ro
 
 networks:
   proxy:
