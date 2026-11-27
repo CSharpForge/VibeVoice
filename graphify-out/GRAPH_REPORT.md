@@ -1,16 +1,16 @@
-# Graph Report - VibeVoice  (2026-11-26)
+# Graph Report - VibeVoice  (2026-11-27)
 
 ## Corpus Check
-- 36 files · ~16,437 words
+- 37 files · ~17,065 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 256 nodes · 292 edges · 27 communities (19 shown, 8 thin omitted)
+- 260 nodes · 295 edges · 29 communities (20 shown, 9 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 2 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `9a6ff8b5`
+- Built from commit: `8e9d0080`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -28,6 +28,7 @@
 - layout.tsx
 - HomeShell
 - graphify reference: extra exports and benchmark
+- include
 - deploy.sh
 - graphify reference: add a URL and watch a folder
 - graphify reference: commit hook and native CLAUDE.md integration
@@ -40,6 +41,7 @@
 - graphify reference: GitHub clone and cross-repo merge
 - graphify reference: transcribe video and audio
 - extraction-spec.md
+- privacy/page.tsx
 
 ## God Nodes (most connected - your core abstractions)
 1. `compilerOptions` - 16 edges
@@ -68,15 +70,15 @@
 ## Import Cycles
 - None detected.
 
-## Communities (27 total, 8 thin omitted)
+## Communities (29 total, 9 thin omitted)
 
 ### Community 0 - "livekit-token/route.ts"
 Cohesion: 0.16
 Nodes (20): badRequest(), isTokenBody(), POST(), getRequestOrigin(), POST(), AppConfig, getAppConfig(), parsePositiveInt() (+12 more)
 
 ### Community 1 - "compilerOptions"
-Cohesion: 0.07
-Nodes (27): dom, dom.iterable, esnext, .next/dev/types/**/*.ts, next-env.d.ts, .next/types/**/*.ts, node_modules, **/*.ts (+19 more)
+Cohesion: 0.11
+Nodes (19): dom, dom.iterable, esnext, compilerOptions, allowJs, esModuleInterop, incremental, isolatedModules (+11 more)
 
 ### Community 2 - "dependencies"
 Cohesion: 0.13
@@ -114,6 +116,10 @@ Nodes (12): name, overrides, postcss, private, scripts, build, dev, lint (+4 mor
 Cohesion: 0.22
 Nodes (8): graphify reference: extra exports and benchmark, Step 6b - Wiki (only if --wiki flag), Step 7 - Neo4j export (only if --neo4j or --neo4j-push flag), Step 7a - FalkorDB export (only if --falkordb or --falkordb-push flag), Step 7b - SVG export (only if --svg flag), Step 7c - GraphML export (only if --graphml flag), Step 7d - MCP server (only if --mcp flag), Step 8 - Token reduction benchmark (only if total_words > 5000)
 
+### Community 13 - "include"
+Cohesion: 0.22
+Nodes (8): .next/dev/types/**/*.ts, next-env.d.ts, .next/types/**/*.ts, node_modules, **/*.ts, **/*.tsx, exclude, include
+
 ### Community 14 - "deploy.sh"
 Cohesion: 0.70
 Nodes (4): die(), remote(), deploy.sh script, step()
@@ -139,23 +145,23 @@ Cohesion: 0.50
 Nodes (3): For --cluster-only, For --update (incremental re-extraction), graphify reference: incremental update and cluster-only
 
 ## Knowledge Gaps
-- **124 isolated node(s):** `metadata`, `viewport`, `PageProps`, `CreatedRoom`, `Handler` (+119 more)
+- **126 isolated node(s):** `metadata`, `viewport`, `metadata`, `dynamic`, `PageProps` (+121 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **8 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **9 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `devDependencies` connect `devDependencies` to `package.json`?**
-  _High betweenness centrality (0.026) - this node is a cross-community bridge._
+  _High betweenness centrality (0.025) - this node is a cross-community bridge._
 - **Why does `dependencies` connect `dependencies` to `package.json`?**
   _High betweenness centrality (0.018) - this node is a cross-community bridge._
 - **Why does `RoomShell()` connect `RoomShell` to `HomeShell`, `room-shell.tsx`?**
   _High betweenness centrality (0.012) - this node is a cross-community bridge._
-- **What connects `metadata`, `viewport`, `PageProps` to the rest of the system?**
-  _124 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **What connects `metadata`, `viewport`, `metadata` to the rest of the system?**
+  _126 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `compilerOptions` be split into smaller, more focused modules?**
-  _Cohesion score 0.07142857142857142 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.10526315789473684 - nodes in this community are weakly interconnected._
 - **Should `dependencies` be split into smaller, more focused modules?**
   _Cohesion score 0.13333333333333333 - nodes in this community are weakly interconnected._
 - **Should `VibeVoice — Feature Specification` be split into smaller, more focused modules?**

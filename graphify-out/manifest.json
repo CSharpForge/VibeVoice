@@ -36,15 +36,15 @@
     "semantic_hash": ""
   },
   "components/home-shell.tsx": {
-    "mtime": 1795744876.442314,
-    "seen": 1795744976.2279124,
-    "ast_hash": "349a876c1fd4f197213e4697e4376a73",
+    "mtime": 1795759145.6687691,
+    "seen": 1795759176.7527533,
+    "ast_hash": "1d815114d6f5d65e0e266be278b301a0",
     "semantic_hash": ""
   },
   "components/room-shell.tsx": {
-    "mtime": 1795744876.441942,
-    "seen": 1795744976.2279172,
-    "ast_hash": "27a9401173bb01dc929864f6279ec3cb",
+    "mtime": 1795759145.6697989,
+    "seen": 1795759176.7527585,
+    "ast_hash": "91f004e407edec92efdf930c35e0ee55",
     "semantic_hash": ""
   },
   "components/ui.test.tsx": {
@@ -90,9 +90,9 @@
     "semantic_hash": ""
   },
   "next-env.d.ts": {
-    "mtime": 1795744913.854284,
-    "seen": 1795744976.2279513,
-    "ast_hash": "8195d2c60ce847a459ae9d308d6a5724",
+    "mtime": 1795744981.7013135,
+    "seen": 1795759176.7528007,
+    "ast_hash": "2a74d3909800ca5467fa83b0ab4a4890",
     "semantic_hash": ""
   },
   "next.config.ts": {
@@ -180,9 +180,9 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1795738846.761021,
-    "seen": 1795744389.7443829,
-    "ast_hash": "c6e1d8742062f17debf638bd975f89f0",
+    "mtime": 1795759175.0132155,
+    "seen": 1795759176.7528343,
+    "ast_hash": "8e065125d485f3f069707164e7941cd3",
     "semantic_hash": ""
   },
   "components/room-shell.audio.test.tsx": {
@@ -198,15 +198,15 @@
     "semantic_hash": ""
   },
   "deploy/docker-compose.yml": {
-    "mtime": 1795743207.1423593,
-    "seen": 1795744389.744385,
-    "ast_hash": "07b69bcbdb35a56947fb40b45d451870",
+    "mtime": 1795759145.670059,
+    "seen": 1795759176.7528365,
+    "ast_hash": "b05677e3a28a282d527d3211eac125d6",
     "semantic_hash": ""
   },
   "docs/SPEC.md": {
-    "mtime": 1795743207.1433592,
-    "seen": 1795744389.7443874,
-    "ast_hash": "8f9a67d04588f29dd8ed0cb71d1fa67c",
+    "mtime": 1795759145.6849563,
+    "seen": 1795759176.7528384,
+    "ast_hash": "b0334cc79062a5fd06204913dbc10b4b",
     "semantic_hash": ""
   },
   "lib/zoom.test.ts": {
@@ -225,6 +225,12 @@
     "mtime": 1795744610.0116735,
     "seen": 1795744976.2280257,
     "ast_hash": "3f4ffb2824aa44e404bbee04a46419da",
+    "semantic_hash": ""
+  },
+  "app/privacy/page.tsx": {
+    "mtime": 1795759145.5667677,
+    "seen": 1795759176.7527463,
+    "ast_hash": "acf03f315f0e9ffe9f94baadcede4fcb",
     "semantic_hash": ""
   }
 }

@@ -12,6 +12,7 @@
   "10": "layout.tsx",
   "11": "HomeShell",
   "12": "graphify reference: extra exports and benchmark",
+  "13": "include",
   "14": "deploy.sh",
   "15": "graphify reference: add a URL and watch a folder",
   "16": "graphify reference: commit hook and native CLAUDE.md integration",
@@ -25,5 +26,6 @@
   "24": "graphify reference: GitHub clone and cross-repo merge",
   "25": "graphify reference: transcribe video and audio",
   "26": "extraction-spec.md",
-  "27": "livekit-client"
+  "27": "livekit-client",
+  "28": "privacy/page.tsx"
 }
