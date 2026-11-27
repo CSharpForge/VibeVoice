@@ -54,7 +54,9 @@ export function HomeShell() {
         setNotice("Paste the room key before joining.");
         return;
       }
-      window.location.href = `${url.pathname}?key=${encodeURIComponent(roomKey.trim())}`;
+      // Full navigation on purpose: the key must only ever live in the fragment.
+      // eslint-disable-next-line @next/next/no-location-assign-relative-destination
+      window.location.href = `${url.pathname}#key=${encodeURIComponent(roomKey.trim())}`;
     } catch {
       setNotice("Paste a valid room link.");
     }
@@ -174,7 +176,7 @@ export function HomeShell() {
 
                   <a
                     className="button"
-                    href={`/room/${room.roomId}?key=${encodeURIComponent(room.roomKey)}`}
+                    href={`/room/${room.roomId}#key=${encodeURIComponent(room.roomKey)}`}
                   >
                     Open room
                   </a>

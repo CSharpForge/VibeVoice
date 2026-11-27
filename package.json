@@ -11,26 +11,26 @@
     "test:watch": "vitest"
   },
   "dependencies": {
-    "clsx": "latest",
-    "livekit-client": "latest",
-    "livekit-server-sdk": "latest",
-    "lucide-react": "latest",
-    "next": "latest",
-    "react": "latest",
-    "react-dom": "latest"
+    "clsx": "2.1.1",
+    "livekit-client": "2.19.2",
+    "livekit-server-sdk": "2.15.4",
+    "lucide-react": "1.18.0",
+    "next": "16.4.6",
+    "react": "19.2.7",
+    "react-dom": "19.2.7"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "latest",
-    "@testing-library/react": "latest",
-    "@testing-library/user-event": "latest",
-    "@types/node": "latest",
-    "@types/react": "latest",
-    "@types/react-dom": "latest",
-    "eslint": "latest",
-    "eslint-config-next": "latest",
-    "jsdom": "latest",
-    "typescript": "latest",
-    "vitest": "latest"
+    "@testing-library/jest-dom": "6.9.1",
+    "@testing-library/react": "16.3.2",
+    "@testing-library/user-event": "14.6.1",
+    "@types/node": "25.9.3",
+    "@types/react": "19.2.17",
+    "@types/react-dom": "19.2.3",
+    "eslint": "9.39.4",
+    "eslint-config-next": "16.4.6",
+    "jsdom": "29.1.1",
+    "typescript": "6.0.3",
+    "vitest": "4.1.8"
   },
   "overrides": {
     "postcss": "^8.5.10"

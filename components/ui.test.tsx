@@ -38,7 +38,7 @@ describe("room UI", () => {
     expect(screen.getByText("Room key")).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /open room/i })).toHaveAttribute(
       "href",
-      "/room/room_123456?key=key_123456789012345",
+      "/room/room_123456#key=key_123456789012345",
     );
   });
 

@@ -2,11 +2,11 @@ import { RoomShell } from "@/components/room-shell";
 
 type PageProps = {
   params: Promise<{ roomId: string }>;
-  searchParams: Promise<{ key?: string }>;
 };
 
-export default async function RoomPage({ params, searchParams }: PageProps) {
+// The room key lives in the URL fragment (#key=...), which browsers never send
+// to the server, so it is read client-side in RoomShell.
+export default async function RoomPage({ params }: PageProps) {
   const { roomId } = await params;
-  const { key } = await searchParams;
-  return <RoomShell initialRoomKey={key ?? ""} roomId={roomId} />;
+  return <RoomShell roomId={roomId} />;
 }

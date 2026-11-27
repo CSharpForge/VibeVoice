@@ -60,14 +60,20 @@ export async function POST(request: Request) {
       },
     );
   } catch (error) {
-    const message =
-      error instanceof Error ? error.message : "Unable to create room token.";
-    return NextResponse.json({ error: message }, { status: 500 });
+    // Details stay in the server log; the client gets nothing internal.
+    console.error("livekit-token failed:", error);
+    return NextResponse.json(
+      { error: "Unable to create room token." },
+      { status: 500, headers: { "Cache-Control": "no-store" } },
+    );
   }
 }
 
 function badRequest(error: string) {
-  return NextResponse.json({ error }, { status: 400 });
+  return NextResponse.json(
+    { error },
+    { status: 400, headers: { "Cache-Control": "no-store" } },
+  );
 }
 
 function isTokenBody(
