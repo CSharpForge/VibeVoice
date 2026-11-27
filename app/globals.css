@@ -799,6 +799,8 @@ h1 {
   }
 
   .stage {
+    /* min-height plus aspect-ratio would force a min-width wider than the viewport */
+    aspect-ratio: auto;
     min-height: 56dvh;
   }
 
