@@ -62,10 +62,12 @@ export default function PrivacyPage() {
         <p>
           Like any web service, the web server, reverse proxy and media server
           can write technical logs containing your IP address, the time of the
-          request and basic connection errors. We keep these at a minimum, use
-          them only for security and troubleshooting, and let them rotate out
-          automatically. They do not contain call content, chat text or room
-          keys.
+          request and basic connection errors. We use them only for security and
+          troubleshooting. Web server access logs are rotated automatically and
+          kept for roughly five weeks, and error logs for roughly ten weeks;
+          media server logs are limited to warnings and errors and are
+          discarded much sooner. They do not contain call content, chat text or
+          room keys.
         </p>
 
         <h2>Who runs it</h2>
