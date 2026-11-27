@@ -216,6 +216,10 @@ export function HomeShell() {
           {notice ? <p className="note">{notice}</p> : null}
         </div>
       </section>
+
+      <footer className="site-footer">
+        <a href="/privacy">Privacy notice</a>
+      </footer>
     </main>
   );
 }

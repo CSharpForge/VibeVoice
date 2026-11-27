@@ -812,3 +812,62 @@ h1 {
     white-space: normal;
   }
 }
+
+/* Privacy notice page */
+.legal {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 8px 0 48px;
+  color: var(--text);
+  line-height: 1.65;
+}
+
+.legal h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.1;
+  margin: 18px 0 12px;
+}
+
+.legal h2 {
+  margin: 32px 0 8px;
+  font-size: 1.15rem;
+}
+
+.legal ul {
+  padding-left: 1.2rem;
+  color: var(--muted);
+}
+
+.legal li {
+  margin: 6px 0;
+}
+
+.legal p {
+  color: var(--muted);
+}
+
+.legal a {
+  color: var(--cyan);
+}
+
+.legal code {
+  font-family: "SFMono-Regular", Consolas, monospace;
+  color: var(--text);
+}
+
+.legal-back {
+  display: inline-block;
+  padding: 10px 0;
+  text-decoration: none;
+}
+
+.site-footer {
+  max-width: 1180px;
+  margin: 24px auto 0;
+  color: var(--quiet);
+  font-size: 0.85rem;
+}
+
+.site-footer a {
+  color: var(--muted);
+}

@@ -23,7 +23,9 @@ Out of scope: accounts, persistence, recording, moderation, hosting LiveKit itse
 | PRV-4 | Text chat MUST travel only as LiveKit data packets (topic `chat`) and live only in connected browsers' memory. | M, review |
 | PRV-5 | The app MUST NOT load remote fonts, CDNs, analytics, or other third-party runtime assets. | B (network log) |
 | PRV-6 | Responses carrying credentials (room key, token) MUST send `Cache-Control: no-store`. | A |
-| PRV-7 | The room key MUST NOT be sent to the server except in the token request body. | review (see GAP-1) |
+| PRV-7 | The room key MUST NOT be sent to the server except in the token request body. It lives in the URL fragment. | review |
+| PRV-8 | A public privacy notice at `/privacy` MUST describe what is not stored, what is processed, and what servers log. | B |
+| PRV-9 | LiveKit logs at `warn` and container logs are size-capped so IPs and timestamps rotate out quickly. | review (deploy/) |
 
 ## 3. Configuration
 
@@ -125,7 +127,7 @@ These are requirements above that the implementation does not (fully) meet; they
 
 | ID | Gap | Affects |
 |----|-----|---------|
-| GAP-1 | Room key is passed in the query string (`?key=`), so it reaches server request logs, history and referrers. Should be a URL fragment. | PRV-7, HOME-3 |
+| GAP-1 | ~~Room key in the query string~~ — fixed: the key now lives in the URL fragment (`#key=`). | PRV-7, HOME-3 |
 | GAP-2 | No rate limiting on `/api/livekit-token` or `/api/rooms`. | TOK-10 |
 | GAP-3 | 500 responses return raw `error.message` (e.g. "Missing required environment variable: APP_SECRET"). | CFG-4, TOK-9 |
 | GAP-4 | `joinUrl` origin trusts `x-forwarded-host` / `x-forwarded-proto` from the request. | ROOM-6 |

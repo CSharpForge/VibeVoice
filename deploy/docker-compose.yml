@@ -1,6 +1,7 @@
 # VibeVoice + LiveKit OSS, for a server that already runs Nginx Proxy Manager
 # in the compose project "nginx-proxy" (network: nginx-proxy_default).
 #
+# Container logs are capped (json-file, 2 x 5 MB) so they rotate quickly.
 # Secrets live in ./.env (never committed): APP_SECRET, LK_API_KEY, LK_API_SECRET.
 
 services:
@@ -9,12 +10,18 @@ services:
     image: vibevoice:latest
     container_name: vibevoice
     restart: unless-stopped
+    logging:
+      driver: json-file
+      options:
+        max-size: "5m"
+        max-file: "2"
     environment:
       APP_SECRET: ${APP_SECRET}
       LIVEKIT_URL: wss://lk.agiledeck.org
       LIVEKIT_API_KEY: ${LK_API_KEY}
       LIVEKIT_API_SECRET: ${LK_API_SECRET}
       ROOM_TOKEN_TTL_SECONDS: "3600"
+      PRIVACY_CONTACT: ${PRIVACY_CONTACT:-}
     networks:
       - proxy
     healthcheck:
@@ -29,6 +36,11 @@ services:
     image: livekit/livekit-server:v1.13.11
     container_name: livekit
     restart: unless-stopped
+    logging:
+      driver: json-file
+      options:
+        max-size: "5m"
+        max-file: "2"
     network_mode: host
     command: --config /etc/livekit.yaml
     environment:

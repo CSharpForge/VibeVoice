@@ -385,7 +385,10 @@ export function RoomShell({
             <h1>{heading}</h1>
             <p>
               Your name and key are used only to enter this LiveKit room. No
-              account is created.
+              account is created.{" "}
+              <a href="/privacy" rel="noreferrer" target="_blank">
+                Privacy notice
+              </a>
             </p>
             <div className="form-stack">
               <div className="field">

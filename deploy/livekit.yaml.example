@@ -2,7 +2,10 @@
 # API keys come from the LIVEKIT_KEYS environment variable, not this file.
 
 port: 7880          # signalling; Nginx Proxy Manager terminates TLS and forwards here
-log_level: info
+# Privacy: warnings and errors only, so routine join/leave events (with client IPs)
+# are not written to the container log.
+logging:
+  level: warn
 
 rtc:
   tcp_port: 7881    # ICE/TCP fallback, must be reachable directly (not via the proxy)

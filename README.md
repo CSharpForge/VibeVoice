@@ -11,6 +11,8 @@ Private, ephemeral voice rooms for a self-hosted LiveKit OSS deployment.
 - No audio, screen-share, or call recording in the app.
 - Text chat is sent through LiveKit data packets and only lives in connected browser memory.
 
+A public notice lives at `/privacy`. Set `PRIVACY_CONTACT` (an email address) in `deploy/.env` to show a contact line on it. Keep your Nginx Proxy Manager access logs rotating on a short schedule so the notice stays accurate; LiveKit logs at `warn` and container logs are size-capped in `deploy/docker-compose.yml`.
+
 The app still depends on your infrastructure. Disable or minimize ingress, proxy, and LiveKit logs if IP addresses and timestamps are also considered sensitive in your threat model.
 
 ## Required Services
